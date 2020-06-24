@@ -8,15 +8,8 @@
 <title>This is a JSP Page</title>
 </head>
 <body>
-<h1 style="background-color: burlywood;">This page displays the current date and time of the system</h1>
+<h1 style="background-color: burlywood;">This page is deployed using Jenkins pile code </h1>
 <p style="background-color: graytext;"></p>
-<%! 
-public String systemdt(){
-                Date d=new Date();
-                String current_time=d.toString();                        
-returncurrent_time=d;
-            }
-        %>
 <h2 style="background-color: darkgoldenrod;"><%=systemdt()%></h2>
 <form>
         Customer ID: <input type="text" name="idc"><br>
@@ -27,32 +20,13 @@ returncurrent_time=d;
 <input type="submit" value="Create Record of Customer">
 </form>
 <p style="background-color: yellowgreen;"The entered input by the user include the following></p>
-<p style="background-color: highlight;"Customer ID =>
-<%=                 
-request.getParameter("idc")
-         %>
-</p>
+<p style="background-color: highlight;"Customer ID =></p>
 <p style="background-color: highlight;"Customer Name =>
-<%=                 
-request.getParameter("cusname")
-         %>
 </p>
 <p style="background-color: highlight;"Customer Gender =>
-<%=                 
-request.getParameter("gc")
-         %>
-</p>
-<p style="background-color: highlight;"Customer Address =>
-<%=                 
-request.getParameter("caddr")
-         %>
 </p>
 <p style="background-color: highlight;"Customer Profession =>
-<%=                 
-request.getParameter("cprof")
-         %>
 </p>
-<% System.out.println("Work of this page has finished successfully");%>
 </body>
 </html>
 
