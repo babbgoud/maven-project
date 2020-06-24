@@ -10,7 +10,7 @@
 <body>
 <h1 style="background-color: burlywood;">This page is deployed using Jenkins pile code </h1>
 <p style="background-color: graytext;"></p>
-<h2 style="background-color: darkgoldenrod;"><%=systemdt()%></h2>
+<h2 style="background-color: darkgoldenrod;">Home Page - Jenkins</h2>
 <form>
         Customer ID: <input type="text" name="idc"><br>
         Customer Name: <input type="text" name="cusname"><br>
