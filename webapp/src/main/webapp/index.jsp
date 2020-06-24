@@ -14,7 +14,7 @@
 public String systemdt(){
                 Date d=new Date();
                 String current_time=d.toString();                        
-returncurrent_time;
+returncurrent_time=d;
             }
         %>
 <h2 style="background-color: darkgoldenrod;"><%=systemdt()%></h2>
