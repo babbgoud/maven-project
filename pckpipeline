@@ -1,0 +1,22 @@
+pipeline{
+    agent any
+    stages{
+        stage('Build'){
+            steps{
+                script{
+                    echo "Build process started ..."
+                    buildResult = build(job : "package", propagate:false).result
+                    if(buildResult == "FAILURE"){
+                        echo "Build is failed"
+                        currentBuild.result = "UNSTABLE"
+                    }
+                    if(buildResult == "SUCCESS"){
+                        echo "Build is failed"
+                        currentBuild.result = "SUCCESS"
+                    }
+                }
+                
+            }
+        }
+    }
+}
