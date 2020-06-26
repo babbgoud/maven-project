@@ -11,7 +11,7 @@ pipeline{
                         currentBuild.result = "UNSTABLE"
                     }
                     if(buildResult == "SUCCESS"){
-                        echo "Build is failed"
+                        echo "Build is success"
                         currentBuild.result = "SUCCESS"
                     }
                 }
