@@ -12,13 +12,13 @@ pipeline{
             post{
                 success{
                     echo 'Now Archiving ...'
-                    archiveArtifacts artifacts: '**/target/*.war'
+                    archiveArtifacts artifacts: "**/target/*.war"
                 }
             }
         }
-        stage('Docker image creation'){
+        stage("Docker image creation"){
             steps{
-                sh 'docker build . -t tomcatsamplewebapp:${env.BUILD_ID}'
+                sh "docker build . -t tomcatsamplewebapp:${env.BUILD_ID}"
             }
         }
     }
