@@ -6,6 +6,6 @@ COPY requirements.txt ./
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . .
+COPY ./hello-world.py /usr/src/app/
 
-CMD [ "python", "./your-daemon-or-script.py" ]
+CMD [ "python", "./hello-world.py" ]
