@@ -9,7 +9,7 @@ pipeline{
     stages{
         stage("Python Docker Image Creation"){
             steps{
-                sh "docker build -f ./python/python.Dockerfile . -t mypython:$buildID"
+                sh "docker build -f ./apache/python/python.Dockerfile . -t mypython:$buildID"
             }
             post{
                 success{
