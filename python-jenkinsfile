@@ -1,0 +1,21 @@
+pipeline{
+    agnet any
+    options{
+        timestamps()
+    }
+    environment{
+        buildID = "$BUILD_ID"
+    }
+    stages{
+        satge("Python Docker Image Creation"){
+            steps{
+                sh "docker build -f ./python/python.Dockerfile . -t mypython:$buildID"
+            }
+            post{
+                success{
+                    echo " Python Docker image created successfully ..!"
+                }
+            }
+        }
+    }
+}
