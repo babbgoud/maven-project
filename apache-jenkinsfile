@@ -4,7 +4,7 @@ pipeline{
         timestamps()
     }
     environment{
-        buildID = $BUILD_ID
+        buildID = "$BUILD_ID"
     }
     stages{
         stage("Docker image creation - Apache HTTP Server"){
