@@ -1,0 +1,21 @@
+pipeline{
+    agent any
+    options{
+        timestamps()
+    }
+    environment{
+        buildID = $BUILD_ID
+    }
+    stages{
+        stage("Docker image creation - Apache HTTP Server"){
+            steps{
+                sh "docker build . -f apache.Dockerfile -t my-apacheserver:$buildID"
+            }
+            post{
+                success{
+                    echo "Docker image Apache Server created successfully ..!"
+                }
+            }
+        }
+    }
+}
