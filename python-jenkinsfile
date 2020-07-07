@@ -7,7 +7,7 @@ pipeline{
         buildID = "$BUILD_ID"
     }
     stages{
-        satge("Python Docker Image Creation"){
+        stage("Python Docker Image Creation"){
             steps{
                 sh "docker build -f ./python/python.Dockerfile . -t mypython:$buildID"
             }
