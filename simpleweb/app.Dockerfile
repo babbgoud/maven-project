@@ -4,7 +4,7 @@ FROM node:alpine
 WORKDIR /usr/app
 
 # Install some depenendencies
-COPY ./package.json ./
+COPY ./simpleweb/package.json ./
 RUN npm install
 COPY ./ ./
 
