@@ -1,0 +1,22 @@
+pipeline{
+    agent any
+    options{
+        timestamps()
+    }
+    environment{
+        buildID="$BUILD_ID"
+    }
+    stages{
+        stage('NodeJS Docker Image Creation'){
+            steps{
+                echo "Image creation started..."
+                sh "docker build -f ./simpleweb/nodejs.Dockerfile . -t mynodejs:$buildID"
+            }
+            post{
+                success{
+                    echo "Docker image created successfully..!"
+                }
+            }
+        }
+    }
+}
