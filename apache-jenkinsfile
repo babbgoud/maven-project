@@ -9,6 +9,7 @@ pipeline{
     stages{
         stage("Docker image creation - Apache HTTP Server"){
             steps{
+                echo "Docker image Apache Server Creation Started..."
                 sh "docker build  -f ./apache/app.Dockerfile . -t my-apacheserver:$buildID"
             }
             post{
