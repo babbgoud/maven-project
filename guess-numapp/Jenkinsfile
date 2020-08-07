@@ -3,7 +3,7 @@ pipeline{
     options{
         timestamps()
     }
-    environments{
+    environment{
         buildID:'$BUILD_NUMBER'
     }
     stages{
