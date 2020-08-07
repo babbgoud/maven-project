@@ -16,7 +16,7 @@ pipeline{
             }
             post{
                 success{
-                    echo "Docker image build successfully. "
+                    echo "Docker image created successfully with build number: $buildID "
                 }
             }
         }
