@@ -4,14 +4,14 @@ pipeline{
         timestamps()
     }
     environment{
-        buildID:'$BUILD_NUMBER'
+        buildID = "$BUILD_ID"
     }
     stages{
         stage('Build Docker Image'){
             steps{
                 echo "Buld docker images for GuessNum python application..."
                 scripts{
-                    sh 'docker build -t sandeepb3245/guessnumpy:$buildID .'
+                    sh "docker build -t sandeepb3245/guessnumpy:$buildID ."
                 }
                 post{
                     success{
