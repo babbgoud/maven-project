@@ -11,7 +11,7 @@ pipeline{
             steps{
                 echo "Buld docker images for GuessNum python application..."
                 script{
-                    sh "docker build -f ./guess-numapp/. -t sandeepb3245/guessnumpy:$buildID "
+                    sh "docker build -f ./guess-numapp/Dockerfile . -t sandeepb3245/guessnumpy:$buildID "
                 }
                 post{
                     success{
