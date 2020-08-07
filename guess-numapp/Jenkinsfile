@@ -13,10 +13,10 @@ pipeline{
                 script{
                     sh "docker build -f ./guess-numapp/Dockerfile . -t sandeepb3245/guessnumpy:$buildID "
                 }
-                post{
-                    success{
-                        echo "Docker image build successfully. "
-                    }
+            }
+            post{
+                success{
+                    echo "Docker image build successfully. "
                 }
             }
         }
