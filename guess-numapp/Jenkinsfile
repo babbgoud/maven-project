@@ -1,0 +1,24 @@
+pipeline{
+    agent any
+    options{
+        timestamps()
+    }
+    environments{
+        buildID:'$BUILD_NUMBER'
+    }
+    stages{
+        stage('Build Docker Image'){
+            steps{
+                echo "Buld docker images for GuessNum python application..."
+                scripts{
+                    sh 'docker build -t sandeepb3245/guessnumpy:$buildID .'
+                }
+                post{
+                    success{
+                        echo "Docker image build successfully. "
+                    }
+                }
+            }
+        }
+    }
+}
