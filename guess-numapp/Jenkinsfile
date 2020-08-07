@@ -10,7 +10,7 @@ pipeline{
         stage('Build Docker Image'){
             steps{
                 echo "Buld docker images for GuessNum python application..."
-                scripts{
+                script{
                     sh "docker build -t sandeepb3245/guessnumpy:$buildID ."
                 }
                 post{
